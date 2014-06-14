@@ -1,0 +1,30 @@
+= Writing dc
+
+== Conventions
+
+=== Cleaning Up (Dropping)
+
+It's fairly simple to drop numbers.  Since dc doesn't have a drop function, the
+easiest way to make this happen is to turn the number into 0, and then add it to
+the top of stack.  This does require a top of stack, but since this code is a
+set of functions, we can easily make this be the case.
+
+The customary way to write this for a number is 'd-+'.  This duplicates the item
+and subtracts the value from itself, resulting in 0.  This is then added to the
+top of stack.
+
+It's best to clean up macros right away.  The typical code for cleaning up a
+macro A is 'LAZd-+'.  This first pops the macro off its stack, and the turns it
+into a number, which is then dropped as above.
+
+If you're not sure whether the item on top of the stack is a string or an
+number, write 'Zd-+'.  This works for both numbers and strings.
+
+== Translating Algorithms
+
+Most other implementations of algorithms are written in C or bc.  Fortunately,
+these two languages are very similar, so most of the same rules apply.
+
+=== if
+
+Writing an if statement is fairly simple.

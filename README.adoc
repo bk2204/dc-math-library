@@ -1,0 +1,11 @@
+= dc Math Library
+
+== What is this?
+
+The Unix calculator bc provides a math library when invoked with -l.  This
+provides a small number of useful functions.  Using these functions, it's
+possible to compute arbitrary exponentiations, logarithms, π, e, and lots of
+other neat things.
+
+dc, on which bc is based, does not provide a math library.  This is that missing
+math library.
